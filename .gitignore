@@ -2,6 +2,7 @@
 *.d
 docker
 *.tar.gz
+ESP8266_RTOS_SDK
 hello_world/build
 
 # Object files

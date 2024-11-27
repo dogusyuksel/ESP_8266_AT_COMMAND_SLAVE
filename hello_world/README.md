@@ -9,7 +9,7 @@ python ESP8266_RTOS_SDK/components/esptool_py/esptool/esptool.py --chip esp8266 
 ## How to See Output
 
 ```
-miniterm.py /dev/ttyUSB0 74880
+miniterm.py /dev/ttyUSB0 115200
 ```
 
 ## What is the output
