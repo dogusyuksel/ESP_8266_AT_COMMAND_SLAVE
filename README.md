@@ -49,3 +49,5 @@ It is designed by Altium Designer, and fully open–source. Now everyone can mak
 
 [ESP Technical Reference](https://www.espressif.com/sites/default/files/documentation/esp8266-technical_reference_en.pdf)
 
+[ESP Arduino Libraries](https://github.com/esp8266/Arduino/tree/master/libraries)
+
