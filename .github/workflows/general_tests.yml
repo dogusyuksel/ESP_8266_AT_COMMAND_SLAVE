@@ -42,4 +42,4 @@ jobs:
 
     - name: prepare build
       run: |
-        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && export IDF_PATH="/ESP8266_RTOS_SDK" && ./build_all.sh'
+        ./docker/sudo_run_docker.sh ${{ secrets.DOCKER_REPO }}:master 'cd /workspace && export IDF_PATH="/ESP8266_RTOS_SDK" && ./build_all.sh "./projects/protocols/sockets/tcp_server"'
