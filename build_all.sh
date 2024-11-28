@@ -3,6 +3,17 @@
 cd projects
 current_dir=$(pwd)
 
+if [ "$#" -eq 1 ]; then
+    cd $1
+    make clean && make
+    if [ $retval -ne 0 ]
+    then
+        echo "returning fail:$retval"
+        exit $retval
+    fi
+    exit 0
+fi
+
 files=$(find . -iname 'makefile')
 while IFS= read -r line; do
     parentdir="$(dirname "$line")"
