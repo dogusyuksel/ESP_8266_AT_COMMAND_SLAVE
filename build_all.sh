@@ -1,8 +1,5 @@
 #!/bin/bash
 
-cd projects
-current_dir=$(pwd)
-
 if [ "$#" -eq 1 ]; then
     cd $1
     make clean && make
@@ -14,6 +11,9 @@ if [ "$#" -eq 1 ]; then
     echo "build success for $1"
     exit 0
 fi
+
+cd projects
+current_dir=$(pwd)
 
 files=$(find . -iname 'makefile')
 while IFS= read -r line; do
