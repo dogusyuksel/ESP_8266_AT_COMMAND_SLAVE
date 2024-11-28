@@ -1,5 +1,17 @@
 #!/bin/bash
 
+if [ "$#" -eq 1 ]; then
+    cd $1
+    make clean && make
+    if [ $retval -ne 0 ]
+    then
+        echo "returning fail:$retval"
+        exit $retval
+    fi
+    echo "build success for $1"
+    exit 0
+fi
+
 cd projects
 current_dir=$(pwd)
 
