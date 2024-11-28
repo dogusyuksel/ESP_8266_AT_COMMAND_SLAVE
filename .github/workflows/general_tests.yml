@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        github-server-url: https://github.com/dogusyuksel/ESP_8266_AT_COMMAND_SLAVE.git
+        github-server-url: https://github.com/dogusyuksel/esp-8266.git
         lfs: true
 
     - name: Download Repos
