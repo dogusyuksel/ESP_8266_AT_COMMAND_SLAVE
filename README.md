@@ -53,7 +53,7 @@ make
 Please type the FULL path
 
 ```
-./flash.sh ./projects/get-started/hello_world
+./flash.sh ./projects/protocols/sockets/tcp_server
 ```
 
 # How to See Output
@@ -65,54 +65,69 @@ miniterm.py /dev/ttyUSB0 115200
 ## What Is the Output
 
 ```
-Hello world!
-This is ESP8266 chip with 1 CPU cores, WiFi, silicon revision 1, 2MB external flash
-Restarting in 10 seconds...
-Restarting in 9 seconds...
-Restarting in 8 seconds...
-Restarting in 7 seconds...
-Restarting in 6 seconds...
-Restarting in 5 seconds...
-Restarting in 4 seconds...
-Restarting in 3 seconds...
-Restarting in 2 seconds...
-Restarting in 1 seconds...
-Restarting in 0 seconds...
-Restarting now.
+4-104-g2f586ea4 2nd stage bootloader␛[0m
+␛[0;32mI (50) boot: compile time 09:52:25␛[0m
+␛[0;32mI (50) qio_mode: Enabling default flash chip QIO␛[0m
+␛[0;32mI (55) boot: SPI Speed      : 40MHz␛[0m
+␛[0;32mI (59) boot: SPI Mode       : QIO␛[0m
+␛[0;32mI (63) boot: SPI Flash Size : 2MB␛[0m
+␛[0;32mI (67) boot: Partition Table:␛[0m
+␛[0;32mI (71) boot: ## Label            Usage          Type ST Offset   Length␛[0m
+␛[0;32mI (78) boot:  0 nvs              WiFi data        01 02 00009000 00006000␛[0m
+␛[0;32mI (85) boot:  1 phy_init         RF data          01 01 0000f000 00001000␛[0m
+␛[0;32mI (93) boot:  2 factory          factory app      00 00 00010000 000f0000␛[0m
+␛[0;32mI (100) boot: End of partition table␛[0m
+␛[0;32mI (105) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x566b8 (353976) map␛[0m
+␛[0;32mI (234) esp_image: segment 1: paddr=0x000666d0 vaddr=0x402666c8 size=0x0f134 ( 61748) map␛[0m
+␛[0;32mI (256) esp_image: segment 2: paddr=0x0007580c vaddr=0x3ffe8000 size=0x00638 (  1592) load␛[0m
+␛[0;32mI (257) esp_image: segment 3: paddr=0x00075e4c vaddr=0x40100000 size=0x00080 (   128) load␛[0m
+␛[0;32mI (263) esp_image: segment 4: paddr=0x00075ed4 vaddr=0x40100080 size=0x055f4 ( 22004) load␛[0m
+␛[0;32mI (279) boot: Loaded app from partition at offset 0x10000␛[0m
+␛[0;32mI (292) system_api: Base MAC address is not set, read default base MAC address from EFUSE␛[0m
+␛[0;32mI (298) system_api: Base MAC address is not set, read default base MAC address from EFUSE␛[0m
+phy_version: 1167.0, 14a6402, Feb 17 2022, 11:32:25, RTOS new
+␛[0;32mI (350) phy_init: phy ver: 1167_0␛[0m
+␛[0;32mI (357) example_connect: Connecting to dodo_phone...␛[0m
+␛[0;32mI (2072) wifi:state: 0 -> 2 (b0)
+␛[0m␛[0;32mI (2078) wifi:state: 2 -> 3 (0)
+␛[0m␛[0;32mI (2083) wifi:state: 3 -> 5 (10)
+␛[0m␛[0;32mI (2142) wifi:connected with dodo_phone, aid = 1, channel 6, HT20, bssid = 56:ba:19:57:da:ea
+␛[0m␛[0;32mI (3065) tcpip_adapter: sta ip: 172.20.10.13, mask: 255.255.255.240, gw: 172.20.10.1␛[0m
+␛[0;32mI (3070) example_connect: Connected to dodo_phone␛[0m
+␛[0;32mI (3074) example_connect: IPv4 address: 172.20.10.13␛[0m
+␛[0;32mI (3079) example: Socket created␛[0m
+␛[0;32mI (3082) example: Socket binded␛[0m
+␛[0;32mI (3086) example: Socket listening␛[0m
+␛[0;32mI (403700) example: Socket accepted␛[0m
+␛[0;32mI (407481) example: Received 80 bytes from 172.20.10.10:␛[0m
+␛[0;32mI (407485) example: asd
+␛[0m
+␛[0;32mI (409617) example: Received 80 bytes from 172.20.10.10:␛[0m
+␛[0;32mI (409620) example: trs
+␛[0m
+␛[0;32mI (413303) example: Received 80 bytes from 172.20.10.10:␛[0m
+␛[0;32mI (413306) example: exit
+␛[0m
+␛[0;32mI (413327) example: Connection closed␛[0m
+␛[0;31mE (413330) example: Shutting down socket and restarting...␛[0m
+␛[0;32mI (413336) example: Socket created␛[0m
+␛[0;31mE (413338) example: Socket unable to bind: errno 112␛[0m
 
- ets Jan  8 2013,rst cause:2, boot mode:(3,6)
+--- exit ---
+```
 
-load 0x40100000, len 7544, room 16
-tail 8
-chksum 0xc3
-load 0x3ffe8408, len 24, room 0
-tail 8
-chksum 0x4a
-load 0x3ffe8420, len 3468, room 0
-tail 12
-chksum 0x46
-csum 0x46
-␛[0;32mI (80) boot: ESP-IDF v3.4-104-g2f586ea4 2nd stage bootloader␛[0m
-␛[0;32mI (80) boot: compile time 11:20:43␛[0m
-␛[0;32mI (81) qio_mode: Enabling default flash chip QIO␛[0m
-␛[0;32mI (97) boot: SPI Speed      : 40MHz␛[0m
-␛[0;32mI (110) boot: SPI Mode       : QIO␛[0m
-␛[0;32mI (122) boot: SPI Flash Size : 2MB␛[0m
-␛[0;32mI (135) boot: Partition Table:␛[0m
-␛[0;32mI (146) boot: ## Label            Usage          Type ST Offset   Length␛[0m
-␛[0;32mI (169) boot:  0 nvs              WiFi data        01 02 00009000 00006000␛[0m
-␛[0;32mI (192) boot:  1 phy_init         RF data          01 01 0000f000 00001000␛[0m
-␛[0;32mI (216) boot:  2 factory          factory app      00 00 00010000 000f0000␛[0m
-␛[0;32mI (239) boot: End of partition table␛[0m
-␛[0;32mI (252) esp_image: segment 0: paddr=0x00010010 vaddr=0x40210010 size=0x1cc5c (117852) map␛[0m
-␛[0;32mI (335) esp_image: segment 1: paddr=0x0002cc74 vaddr=0x4022cc6c size=0x06cc8 ( 27848) map␛[0m
-␛[0;32mI (349) esp_image: segment 2: paddr=0x00033944 vaddr=0x3ffe8000 size=0x00544 (  1348) load␛[0m
-␛[0;32mI (357) esp_image: segment 3: paddr=0x00033e90 vaddr=0x40100000 size=0x00080 (   128) load␛[0m
-␛[0;32mI (385) esp_image: segment 4: paddr=0x00033f18 vaddr=0x40100080 size=0x0512c ( 20780) load␛[0m
-␛[0;32mI (421) boot: Loaded app from partition at offset 0x10000␛[0m
-Hello world!
-This is ESP8266 chip with 1 CPU cores, WiFi, silicon revision 1, 2MB external flash
-Restarting in 10 seconds...
+## How to Test
+
+Goto tools and type
+
+```
+make
+```
+
+then edit the conf.json file. and finaly execute the below command
+
+```
+./tcp_client.exe -f conf.json
 ```
 
 
