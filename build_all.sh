@@ -3,6 +3,7 @@
 if [ "$#" -eq 1 ]; then
     cd $1
     make clean && make
+    retval=$?
     if [ $retval -ne 0 ]
     then
         echo "returning fail:$retval"
