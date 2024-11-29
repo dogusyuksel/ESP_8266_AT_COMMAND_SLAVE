@@ -4,6 +4,9 @@ docker
 *.tar.gz
 ESP8266_RTOS_SDK
 **/build/**
+cjson/
+*.exe
+sdkconfig.old
 
 # Object files
 *.o
