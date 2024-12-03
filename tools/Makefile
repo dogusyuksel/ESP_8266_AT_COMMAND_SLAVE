@@ -4,8 +4,8 @@ OFILES = $(CFILES:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-LIB_PATH = ./../cjson/build
-INC_PATH = ./../cjson
+LIB_PATH = /thirdparty/cjson/build
+INC_PATH = /thirdparty/cjson
 LIB_NAME = cjson
 
 NAME = tcp_client.exe
