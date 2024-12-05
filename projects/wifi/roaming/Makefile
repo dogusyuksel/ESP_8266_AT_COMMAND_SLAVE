@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := roaminng
+PROJECT_NAME := roaming
 
 include $(IDF_PATH)/make/project.mk
 

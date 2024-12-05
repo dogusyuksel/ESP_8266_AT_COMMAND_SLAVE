@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := tests
+PROJECT_NAME := advanced_tests
 
 EXTRA_COMPONENT_DIRS = $(IDF_PATH)/examples/common_components/protocol_examples_common
 
