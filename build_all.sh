@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 if [ "$#" -eq 1 ]; then
     cd $1
     make clean && make
